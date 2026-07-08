@@ -1,0 +1,9 @@
+e323eff Add CI pipeline and quality gates
+bdf13fa Add CI pipeline with lint, security, and test checks
+cd1d97b Add CI pipeline with lint, security, and test checks
+3dd86f4 Implement JWT authentication service
+157a8f8 Add project dependencies
+9b73c50 Implement Factory Pattern
+a30f713 Complete Task 1
+e544f67 Initial project structure
+9b4c0da Initial commit
