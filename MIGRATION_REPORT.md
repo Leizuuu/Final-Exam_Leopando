@@ -40,3 +40,4 @@ Authentication process:
 6. The server verifies the signature before granting access to protected resources.
 
 This mechanism ensures message integrity and verifies that the token has not been modified.
+

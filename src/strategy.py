@@ -1,33 +1,12 @@
-from abc import ABC, abstractmethod
-
-class Strategy(ABC):
-    @abstractmethod
-    def process(self, data):
-        pass
+from src.strategy import EncryptionStrategy, CompressionStrategy
 
 
-class EncryptionStrategy(Strategy):
-    def __init__(self, key):
-        self.key = key
-
-    def process(self, data):
-        return [value ^ self.key for value in data]
-
-
-class CompressionStrategy(Strategy):
-    def __init__(self, factor):
-        self.factor = factor
-
-    def process(self, data):
-        return [round(value * self.factor, 2) for value in data]
-
-
-class DataProcessor:
-    def __init__(self, strategy):
-        self.strategy = strategy
-
-    def set_strategy(self, strategy):
-        self.strategy = strategy
-
-    def execute(self, data):
-        return self.strategy.process(data)
+class ServiceFactory:
+    @staticmethod
+    def get_service(service_name):
+        if service_name.lower() == "encryption":
+            return EncryptionStrategy(0x4F)
+        elif service_name.lower() == "compression":
+            return CompressionStrategy(0.85)
+        else:
+            raise ValueError(f"Unknown service: {service_name}")
